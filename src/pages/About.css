@@ -1,0 +1,218 @@
+/* ============================================
+   About Page Redesign
+   ============================================ */
+.about-page {
+  background-color: #000;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.about-page::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Hero Section */
+.about-hero {
+  min-height: 100vh;
+  padding: 0 5%;
+}
+
+.hero-subtitle {
+  font-family: var(--font-display);
+}
+
+.hero-scroll-indicator {
+  position: relative;
+}
+
+.hero-scroll-indicator::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 60px;
+  background: var(--color-primary);
+  transform-origin: top;
+  animation: scroll-line 2s ease-in-out infinite;
+}
+
+@keyframes scroll-line {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  50.1% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* Values List */
+.about-value-item {
+  display: flex;
+  padding: 4rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: default;
+  align-items: center;
+}
+
+.about-value-item:hover {
+  background: rgba(255,255,255,0.03);
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.about-value-index {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  width: 150px;
+  flex-shrink: 0;
+}
+
+.about-value-content {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 3rem;
+}
+
+.about-value-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 3rem);
+  text-transform: uppercase;
+  flex: 1;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.4);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.about-value-item:hover .about-value-title {
+  color: #000;
+  padding-left: 0.5rem;
+}
+
+.about-value-desc {
+  flex: 1;
+  font-size: 1.15rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 450px;
+  opacity: 0.8;
+}
+
+/* Cloth Changing frames Section (Matched to Home) */
+.cloth-changing-section {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 65px);
+  background-color: transparent;
+  overflow: hidden;
+  padding: 0;
+}
+
+.cloth-changing-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.cloth-changing-text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.cloth-changing-text-overlay h2 {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8vw, 8rem);
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-hero {
+    padding-top: 15vh !important;
+  }
+  
+  .about-value-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3rem 1rem;
+    gap: 1.5rem;
+  }
+  .about-value-index {
+    width: auto;
+    font-size: 2.5rem;
+  }
+  .about-value-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  
+  .timeline-line-bg, .timeline-progress-bar {
+    left: 20px !important;
+  }
+  .timeline-item {
+    justify-content: flex-start !important;
+  }
+  .timeline-dot {
+    left: 20px !important;
+  }
+  .timeline-content-box {
+    width: 100% !important;
+    text-align: left !important;
+    padding: 0 0 0 4rem !important;
+  }
+
+  /* Grid Split Half fix for Vision section */
+  .grid-split-half {
+    grid-template-columns: 1fr !important;
+    gap: 3rem;
+  }
+  .vision-text-col {
+    padding-right: 0 !important;
+  }
+  
+  .about-hero-title {
+    font-size: 13vw !important;
+    line-height: 1.2 !important;
+  }
+
+  .cloth-changing-text-overlay h2 {
+    font-size: 14vw !important;
+  }
+  
+  .cloth-changing-text-overlay {
+    top: 80% !important; /* Move down so it's not covering the face/body core */
+  }
+}
+
+@media (max-width: 600px) {
+  .about-hero-title {
+    font-size: 13vw !important;
+    line-height: 1.2 !important;
+  }
+}

@@ -1,0 +1,94 @@
+/* ============================================
+   Privacy Policy Page Redesign
+   ============================================ */
+
+.privacy-page {
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  padding-top: 15vh;
+  padding-bottom: 10vh;
+}
+
+.privacy-header-wrap {
+  margin-bottom: 8rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 5rem;
+}
+
+.privacy-header-line {
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  margin: 0;
+  line-height: 0.8;
+  text-transform: uppercase;
+}
+
+.privacy-content-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.privacy-content-block {
+  margin-bottom: 6rem;
+  padding-bottom: 6rem;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.privacy-content-block:last-child {
+  border-bottom: none;
+}
+
+.privacy-content-block h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2.5rem;
+  line-height: 1.1;
+}
+
+.privacy-content-block p, 
+.privacy-content-block li {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: rgba(0,0,0,0.6);
+  font-weight: 500;
+}
+
+.privacy-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.privacy-list li {
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.privacy-list li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-primary);
+  font-size: 1rem;
+}
+
+.privacy-list b, 
+.privacy-list strong {
+  color: #000;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .privacy-header-line {
+    font-size: 4rem !important;
+  }
+}

@@ -1,0 +1,131 @@
+/* ============================================
+   Contact Page Redesign - Image-Free Luxury
+   ============================================ */
+
+.contact-page {
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  padding-top: 20vh;
+  padding-bottom: 15vh;
+}
+
+/* ──── HERO AREA ──── */
+.contact-hero-wrap {
+  margin-bottom: 10rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 5rem;
+}
+
+.contact-hero-text {
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 0.8;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* ──── FORM ELEMENTS ──── */
+.lux-form-wrapper {
+  background: #fff;
+  padding: 6rem;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.lux-form-group {
+  margin-bottom: 3.5rem;
+  position: relative;
+}
+
+.lux-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding: 1.5rem 0;
+  font-family: inherit;
+  font-size: 1.1rem;
+  color: #000;
+  transition: all 0.4s ease;
+  border-radius: 0;
+}
+
+.lux-input:focus {
+  outline: none;
+  border-bottom-color: var(--color-primary);
+}
+
+.lux-input::placeholder {
+  color: rgba(0,0,0,0.3);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.btn-form-submit {
+  width: 100%;
+  padding: 2.5rem;
+  background: #000;
+  color: #fff;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-form-submit:hover {
+  background: var(--color-primary);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* ──── CONTACT INFO ──── */
+.info-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.info-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+  line-height: 1.1;
+  transition: all 0.3s ease;
+}
+
+.info-value:hover {
+  opacity: 0.6;
+}
+
+.info-block {
+  margin-bottom: 6rem;
+}
+
+/* ──── RESPONSIVE ──── */
+@media (max-width: 1000px) {
+  .contact-page {
+    padding-top: 15vh;
+  }
+  .grid-split-half {
+    grid-template-columns: 1fr;
+    gap: 8rem;
+  }
+  .lux-form-wrapper {
+    padding: 3rem 2rem;
+  }
+  .info-value {
+    font-size: 1.8rem;
+  }
+}

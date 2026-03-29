@@ -1,0 +1,288 @@
+/* ============================================
+   TryoAI — Minimalist/Brutalist Typography Design System
+   Matches "Human Interest" reference
+   ============================================ */
+
+:root {
+  --color-bg: #d9e3e4;
+  --color-bg-secondary: #acb6bd;
+  --color-text: #1a1a1a;
+  --color-text-secondary: #3a3a3a;
+  --color-text-muted: #666666;
+  --color-accent: #2c3e50;
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-border-hover: rgba(0, 0, 0, 0.2);
+
+  --font-display: 'Outfit', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-accent: 'Playfair Display', serif;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+  --space-2xl: 8rem;
+
+  --container-max: 1800px;
+  --container-padding: clamp(2rem, 5vw, 4rem);
+
+  --radius-full: 0px;
+  /* brutalist = sharp corners */
+  --transition-fast: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background: linear-gradient(135deg, #acb6bd 0%, #d9e3e4 100%);
+  background-attachment: fixed;
+  color: var(--color-text);
+  line-height: 1.4;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* Typography System */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.heading-hero {
+  font-size: clamp(6rem, 20vw, 18rem);
+  font-weight: 600;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+.heading-xl {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.heading-lg {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 500;
+}
+
+.heading-md {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 500;
+}
+
+.text-lg {
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+.text-md {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-fullscreen {
+  min-height: 100vh;
+  position: relative;
+}
+
+.divider-line {
+  width: 100%;
+  height: 1px;
+  background: var(--color-border);
+}
+
+/* Background Section Themes */
+.bg-theme-gradient-1 {
+  background: linear-gradient(135deg, #bec1c2 0%, #ecebe7 100%);
+}
+
+.bg-theme-offwhite-premium {
+  background-color: #f7f7f7;
+}
+
+.bg-theme-gradient-2 {
+  background: linear-gradient(135deg, #ecebe7 0%, #d9d9d9 100%);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   Premium Gradient System
+   Vibrant, premium gradients — no gold
+   ============================================ */
+
+/* Primary gradient — used on .text-gradient, .gradient-text */
+.gradient-text,
+.text-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 35%, #f093fb 70%, #5ee7df 100%);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: premium-gradient-shift 8s ease infinite;
+}
+
+@keyframes premium-gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Italic Accent — now with gradient */
+.italic-accent {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  background: linear-gradient(135deg, #a78bfa 0%, #ec4899 50%, #06b6d4 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: premium-gradient-shift 6s ease infinite;
+}
+
+/* Outline / Transparent text — gradient stroke effect */
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke: 2px transparent;
+  background: linear-gradient(135deg, #667eea 0%, #f093fb 50%, #5ee7df 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: premium-gradient-shift 8s ease infinite;
+}
+
+/* Sub-heading gradient (for wall-subtitle, overline text, small accent labels) */
+.wall-subtitle,
+.overline-text,
+.overline-text-light,
+.slide-caption {
+  background: linear-gradient(90deg, #818cf8 0%, #c084fc 50%, #fb7185 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: sub-heading-shimmer 6s linear infinite;
+}
+
+@keyframes sub-heading-shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Gradient stroke for transparent/outline headings — stays see-through */
+.gradient-stroke-heading {
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #667eea;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  animation: stroke-color-cycle 6s ease infinite;
+}
+
+@keyframes stroke-color-cycle {
+  0%   { -webkit-text-stroke-color: #667eea; }
+  20%  { -webkit-text-stroke-color: #a78bfa; }
+  40%  { -webkit-text-stroke-color: #f093fb; }
+  60%  { -webkit-text-stroke-color: #ec4899; }
+  80%  { -webkit-text-stroke-color: #5ee7df; }
+  100% { -webkit-text-stroke-color: #667eea; }
+}
+
+/* Minimalist Button (Underline based) */
+.btn-magnetic {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--color-border);
+  transition: border-color var(--transition-fast);
+}
+
+.btn-magnetic:hover {
+  border-color: var(--color-text);
+}
+
+.btn-primary,
+.btn-outline {
+  background: transparent;
+  color: var(--color-text);
+}
+
+.btn-primary::before {
+  display: none;
+}

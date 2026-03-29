@@ -1,0 +1,187 @@
+/* src/components/Preloader.css */
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+.preloader-container {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  pointer-events: none;
+  background-color: transparent;
+}
+
+/* Colorful fill tied to panels */
+.preloader-color-wash {
+  position: absolute;
+  width: 100vw;
+  height: 100vh; /* Full viewport height so logo/gradient align */
+  z-index: 55;
+  pointer-events: none;
+  background: conic-gradient(
+    from 135deg at 0% 0%,
+    #667eea 0%,
+    #764ba2 15%,
+    #f093fb 30%,
+    #5ee7df 45%,
+    #a78bfa 55%,
+    #ec4899 70%,
+    #06b6d4 85%,
+    #667eea 100%
+  );
+  opacity: 0;
+  transform-origin: top left;
+  will-change: opacity, clip-path;
+  clip-path: circle(0% at 0% 0%);
+}
+
+.top-wash {
+  top: 0;
+}
+
+.bottom-wash {
+  bottom: 0; /* Align to the bottom of the bottom panel */
+}
+
+.preloader-panel-top,
+.preloader-panel-bottom {
+  position: absolute;
+  width: 100vw;
+  height: 50.5vh;
+  background: linear-gradient(to bottom, #08081a, #050505);
+  pointer-events: all;
+  left: 0;
+  will-change: transform;
+  z-index: 50;
+  overflow: hidden; /* CRITICAL to cut the wash */
+}
+.preloader-panel-top {
+  top: 0;
+}
+.preloader-panel-bottom {
+  bottom: 0;
+  background: linear-gradient(to top, #08081a, #050505);
+}
+
+.preloader-content-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.preloader-brand-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preloader-main-title {
+  margin: 0;
+  font-family: 'Syncopate', sans-serif, "Helvetica Neue", Arial;
+  font-size: clamp(3rem, 10vw, 7rem);
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: flex;
+  padding: 0.5rem 0;
+}
+
+.char-wrap {
+  display: inline-block;
+  overflow: hidden;
+  padding-right: 0.05em; /* Prevent clipping of italics if any */
+  padding-top: 0.2em;
+}
+
+.char {
+  display: inline-block;
+  will-change: transform, opacity;
+  transform-style: preserve-3d;
+}
+
+.accent-char {
+  color: #ffffff; /* PURE WHITE for contrast */
+  background: linear-gradient(135deg, #667eea, #a78bfa, #f093fb, #5ee7df);
+  background-size: 200% 200%;
+  padding: 0.05em 0.25em;
+  border-radius: 0.15em;
+  font-weight: 800;
+  margin-left: 0.15em;
+  box-shadow: 
+    0 10px 25px rgba(102, 126, 234, 0.3),
+    0 4px 10px rgba(240, 147, 251, 0.15);
+  display: inline-block;
+  line-height: 1.1;
+  animation: premium-gradient-shift 8s ease infinite; /* Existing shimmer animation */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Glass border */
+  backdrop-filter: blur(5px);
+}
+
+.preloader-tagline {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-style: italic;
+  letter-spacing: 0.4em;
+  color: #a3a3a3;
+  margin: 1.5rem 0 0 0;
+  text-align: center;
+  white-space: nowrap;
+  font-weight: 400;
+}
+
+.preloader-loading-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 5rem;
+}
+
+.preloader-modern-bar {
+  width: 250px;
+  max-width: 60vw;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.preloader-bar-fill {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #acb6bd, #d9e3e4);
+  transform-origin: left;
+  will-change: transform;
+}
+
+.progress-text {
+  font-family: 'Syncopate', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .preloader-main-title {
+     font-size: 2.8rem;
+     letter-spacing: 0.1em;
+  }
+  .preloader-tagline {
+     letter-spacing: 0.25em;
+     font-size: 0.75rem;
+     margin-top: 1rem;
+  }
+  .preloader-modern-bar {
+     width: 180px;
+  }
+  .preloader-loading-wrapper {
+     margin-top: 4rem;
+  }
+}

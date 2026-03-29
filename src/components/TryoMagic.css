@@ -1,0 +1,349 @@
+/* ============================================
+   AI Fashion Evolution — Premium Colorful Design
+   ============================================ */
+
+.tryo-magic-section {
+    position: relative;
+    padding: 180px 0;
+    background: linear-gradient(135deg, #0f0c29 0%, #1a1040 30%, #24243e 60%, #0f0c29 100%);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+/* Animated color blobs in background */
+.tryo-magic-section::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.25) 0%, transparent 70%);
+    filter: blur(80px);
+    animation: blob-float-1 12s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.tryo-magic-section::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, transparent 70%);
+    filter: blur(80px);
+    animation: blob-float-2 10s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes blob-float-1 {
+    0%   { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(80px, 60px) scale(1.3); }
+}
+
+@keyframes blob-float-2 {
+    0%   { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-60px, -50px) scale(1.2); }
+}
+
+.tryo-magic-header {
+    text-align: center;
+    margin-bottom: 120px;
+    z-index: 10;
+}
+
+.magic-title {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    letter-spacing: -2px;
+}
+
+/* gradient-text is defined globally in index.css */
+
+.magic-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.85); /* Boosted for readability on dark section bg */
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+/* Magic Container */
+.magic-container {
+    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    perspective: 1500px; /* Add perspective for realistic rotations */
+}
+
+/* Zones */
+.magic-input-zone {
+    position: absolute;
+    left: 8%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 350px;
+    height: 525px;
+}
+
+.magic-output-zone {
+    position: absolute;
+    right: 8%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 350px;
+    height: 525px;
+}
+
+/* Cards Styling — Gradient glowing borders */
+.magic-card, .magic-card-after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow:
+        0 20px 60px -10px rgba(102, 126, 234, 0.2),
+        0 40px 80px -20px rgba(167, 139, 250, 0.1);
+    border: 2px solid transparent;
+    background: 
+        linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(135deg, #667eea, #a78bfa, #f093fb, #5ee7df) border-box;
+    transform-origin: center center;
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.magic-card img, .magic-card-after img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.magic-input-zone:hover .magic-card,
+.magic-output-zone:hover .magic-card-after {
+    transform: translateY(-10px) rotateX(5deg) rotateY(-5deg) scale(1.02);
+    box-shadow:
+        20px 30px 60px -10px rgba(102, 126, 234, 0.3),
+        0 40px 80px -20px rgba(167, 139, 250, 0.2);
+}
+
+.magic-input-zone:hover .magic-card img,
+.magic-output-zone:hover .magic-card-after img {
+    transform: scale(1.1);
+}
+
+/* Original tag */
+.card-tag {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.05); /* Light black for better visibility */
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #000; /* BLACK TEXT */
+}
+
+/* TryoAI Magic tag — premium gradient (no gold) */
+.card-tag.gold {
+    background: linear-gradient(135deg, #667eea 0%, #a78bfa 40%, #f093fb 100%);
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 5px 25px rgba(102, 126, 234, 0.4);
+    border: none;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Portal Styling — Vibrant colorful rings */
+.magic-portal-wrapper {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.magic-portal {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portal-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent;
+    border-top: 3px solid #667eea;
+    border-bottom: 3px solid #f093fb;
+    border-left: 2px solid #a78bfa;
+    border-right: 2px solid #5ee7df;
+    border-radius: 50%;
+    filter: blur(1px);
+    box-shadow:
+        0 0 30px rgba(102, 126, 234, 0.15),
+        inset 0 0 30px rgba(240, 147, 251, 0.08);
+}
+
+.portal-ring:nth-child(1) {
+    animation: rotate-portal 3s linear infinite;
+}
+.portal-ring:nth-child(2) { 
+    width: 115%; 
+    height: 115%; 
+    animation: rotate-portal 5s linear infinite reverse;
+    opacity: 0.5;
+    border-top-color: #ec4899;
+    border-bottom-color: #06b6d4;
+    border-left-color: #a78bfa;
+    border-right-color: #667eea;
+}
+.portal-ring:nth-child(3) { 
+    width: 130%; 
+    height: 130%; 
+    animation: rotate-portal 8s linear infinite;
+    opacity: 0.25;
+    border-top-color: #5ee7df;
+    border-bottom-color: #667eea;
+    border-left-color: #f093fb;
+    border-right-color: #a78bfa;
+}
+
+.portal-core {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #1a1040, #24243e);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    box-shadow:
+        0 0 60px rgba(102, 126, 234, 0.2),
+        0 0 120px rgba(167, 139, 250, 0.1),
+        inset 0 0 40px rgba(102, 126, 234, 0.1);
+}
+
+.portal-core::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #a78bfa, #f093fb, #5ee7df);
+    z-index: -1;
+    animation: rotate-portal 4s linear infinite;
+}
+
+.portal-core::after {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.15) 0%, transparent 60%);
+    z-index: -2;
+    animation: portal-pulse 3s ease-in-out infinite;
+}
+
+@keyframes portal-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50%      { transform: scale(1.2); opacity: 1; }
+}
+
+.portal-logo {
+    font-weight: 900;
+    font-size: 2rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #667eea, #a78bfa, #f093fb, #5ee7df);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: premium-gradient-shift 6s ease infinite;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes premium-gradient-shift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Animations */
+@keyframes rotate-portal {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Glow Background — Vibrant */
+.magic-glow-bg {
+    position: absolute;
+    width: 1200px;
+    height: 1200px;
+    background: 
+        radial-gradient(circle at 30% 40%, rgba(102, 126, 234, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(240, 147, 251, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(94, 231, 223, 0.08) 0%, transparent 60%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1200px) {
+    .magic-input-zone { left: 5%; width: 280px; }
+    .magic-output-zone { right: 5%; width: 280px; }
+}
+
+@media (max-width: 900px) {
+    .tryo-magic-section { padding: 60px 0; }
+    .tryo-magic-header { margin-bottom: 40px; }
+    .magic-container { height: auto; flex-direction: column; perspective: none; }
+    .magic-input-zone, .magic-output-zone { 
+        position: relative; 
+        left: auto; 
+        right: auto; 
+        top: auto; 
+        transform: none; 
+        margin: 20px auto; 
+        width: 280px; 
+        height: 400px; 
+    }
+    .magic-portal-wrapper { margin: 60px auto; width: 300px; height: 300px; }
+    .magic-portal { width: 220px; height: 220px; }
+    .portal-core { width: 140px; height: 140px; }
+    .portal-logo { font-size: 1.4rem; }
+}

@@ -1,0 +1,5 @@
+/* App-level layout styles */
+.app-wrapper {
+  position: relative;
+  min-height: 100vh;
+}

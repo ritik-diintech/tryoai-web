@@ -1,0 +1,56 @@
+.cursor,
+.cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10000;
+  border-radius: 50%;
+  will-change: transform;
+  mix-blend-mode: difference;
+}
+
+.cursor {
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  background: var(--color-white);
+  transition: width 0.3s var(--ease-out), height 0.3s var(--ease-out), margin 0.3s var(--ease-out), opacity 0.3s;
+}
+
+.cursor-follower {
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: width 0.4s var(--ease-out), height 0.4s var(--ease-out), margin 0.4s var(--ease-out), border-color 0.3s, background 0.3s;
+}
+
+.cursor--hover {
+  width: 0;
+  height: 0;
+  margin: 0;
+  opacity: 0;
+}
+
+.cursor-follower--hover {
+  width: 64px;
+  height: 64px;
+  margin: -32px 0 0 -32px;
+  border-color: var(--color-accent);
+  background: rgba(200, 162, 248, 0.08);
+}
+
+@media (pointer: coarse) {
+  .cursor,
+  .cursor-follower {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .cursor,
+  .cursor-follower {
+    display: none !important;
+  }
+}
