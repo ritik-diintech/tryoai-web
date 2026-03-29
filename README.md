@@ -82,7 +82,7 @@ src/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/tryoai.git
+   git clone https://github.com/ritik-diintech/tryoai-web.git
    cd tryoai
    ```
 
