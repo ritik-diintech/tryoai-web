@@ -52,8 +52,8 @@ export default function Product() {
 
       // Mask Parallax
       gsap.to('.hero-prod-img', {
-        yPercent: 20, 
-        ease: 'none', 
+        yPercent: 20,
+        ease: 'none',
         scrollTrigger: { trigger: '.product-hero-lux', start: 'top top', end: 'bottom top', scrub: true }
       })
 
@@ -84,20 +84,20 @@ export default function Product() {
 
   return (
     <main ref={pageRef} className="product-page" style={{ backgroundColor: 'var(--color-bg)' }}>
-      
+
       {/* ── LUXURY MASKED HERO ── */}
       <section className="product-hero-lux section-fullscreen" id="product-hero" style={{ background: '#050505', position: 'relative', overflow: 'hidden' }}>
-        
+
         {/* Background Overlay Graphic */}
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 1, background: 'radial-gradient(circle at 80% 50%, transparent 0%, #050505 60%)' }}></div>
-        
+
         <div className="hero-prod-img" style={{ position: 'absolute', top: '-10%', right: '-10%', width: '70%', height: '120vh', zIndex: 0, filter: 'brightness(0.6)' }}>
-           <img src={imgHero} alt="Engine Background" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          <img src={imgHero} alt="Engine Background" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         </div>
 
         <div className="container" style={{ position: 'relative', zIndex: 2, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           <span className="text-gradient" style={{ letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '1.5rem', fontWeight: 600, display: 'block' }}>The TryOAI Engine</span>
-          
+
           <div style={{ overflow: 'hidden' }}>
             <h1 className="heading-huge prod-hero-title gradient-stroke-heading" style={{ margin: 0, lineHeight: 0.85, textTransform: 'uppercase' }}>INTELLIGENT.</h1>
           </div>
@@ -107,7 +107,7 @@ export default function Product() {
           <div style={{ overflow: 'hidden' }}>
             <h1 className="heading-huge prod-hero-title" style={{ margin: 0, color: 'var(--color-primary)', lineHeight: 0.85, textTransform: 'uppercase' }}>VIRTUAL.</h1>
           </div>
-          
+
           <p className="text-lg text-secondary prod-hero-title" style={{ maxWidth: '550px', marginTop: '4rem', lineHeight: 1.6, paddingLeft: '2rem', borderLeft: '1px solid rgba(255,255,255,0.2)' }}>
             A completely seamless, secure, and boundary-pushing digital shopping architecture designed strictly to revolutionize e-commerce conversion models worldwide.
           </p>
@@ -119,7 +119,7 @@ export default function Product() {
         <div className="container">
           {steps.map((step, i) => (
             <div key={i} className={`grid-split-half align-center lux-step-row ${i % 2 !== 0 ? 'order-reverse' : ''}`} style={{ marginBottom: '8rem', gap: '5rem' }}>
-              
+
               <div className={`lux-step-img-col ${i % 2 !== 0 ? 'order-last' : ''}`} style={{ width: '100%', height: '75vh', overflow: 'hidden', borderRadius: '4px', position: 'relative' }}>
                 <img src={step.image} alt={step.title} className="lux-step-img" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: '1px solid rgba(255,255,255,0.1)', pointerEvents: 'none' }}></div>
@@ -139,7 +139,7 @@ export default function Product() {
       {/* ── TECHNICAL TYPOGRAPHIC ACCORDION/ROWS ── */}
       <section className="product-tech section" id="product-tech" style={{ padding: '8rem 0', background: '#050505', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
         <div className="container">
-          
+
           <div style={{ marginBottom: '6rem' }}>
             <span className="text-gradient" style={{ letterSpacing: '4px', textTransform: 'uppercase', fontWeight: 600, display: 'block', marginBottom: '1rem' }}>Under the Hood</span>
             <h2 className="heading-huge" style={{ textTransform: 'uppercase', lineHeight: 1 }}>
@@ -178,7 +178,7 @@ export default function Product() {
           </div>
         </div>
       </section>
-      
+
     </main>
   )
 }

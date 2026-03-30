@@ -493,15 +493,15 @@ export default function Home() {
 
         // Text Step Animations
         stepTl.to('.man-step-1', { opacity: 0, y: -40, duration: 0.4, ease: 'power2.in' }, 0.8);
-        stepTl.fromTo('.man-step-2', 
-          { opacity: 0, y: 40 }, 
-          { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 
+        stepTl.fromTo('.man-step-2',
+          { opacity: 0, y: 40 },
+          { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' },
           1.2
         );
         stepTl.to('.man-step-2', { opacity: 0, y: -40, duration: 0.4, ease: 'power2.in' }, 1.8);
-        stepTl.fromTo('.man-step-3', 
-          { opacity: 0, y: 40 }, 
-          { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 
+        stepTl.fromTo('.man-step-3',
+          { opacity: 0, y: 40 },
+          { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' },
           2.2
         );
 

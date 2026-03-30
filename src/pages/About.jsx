@@ -313,16 +313,16 @@ export default function About() {
                 transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
                 padding: '4px'
               }}
-              onMouseOver={(e) => {
-                e.currentTarget.style.transform = 'translateY(-10px) scale(1.02)';
-                e.currentTarget.style.zIndex = '3';
-                e.currentTarget.style.boxShadow = '0 30px 60px rgba(102, 126, 234, 0.2)';
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                e.currentTarget.style.zIndex = '1';
-                e.currentTarget.style.boxShadow = '0 15px 35px rgba(0,0,0,0.15)';
-              }}>
+                onMouseOver={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-10px) scale(1.02)';
+                  e.currentTarget.style.zIndex = '3';
+                  e.currentTarget.style.boxShadow = '0 30px 60px rgba(102, 126, 234, 0.2)';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                  e.currentTarget.style.zIndex = '1';
+                  e.currentTarget.style.boxShadow = '0 15px 35px rgba(0,0,0,0.15)';
+                }}>
                 <img src={imgGroupModels} alt="Vision 1" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }} />
               </div>
               <div className="vision-img-stack-2" style={{
@@ -340,14 +340,14 @@ export default function About() {
                 transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
                 padding: '4px'
               }}
-              onMouseOver={(e) => {
-                e.currentTarget.style.transform = 'translateY(-20px) scale(1.04) rotate(-1deg)';
-                e.currentTarget.style.boxShadow = '0 40px 80px rgba(102, 126, 234, 0.3)';
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.transform = 'translateY(0) scale(1) rotate(0deg)';
-                e.currentTarget.style.boxShadow = '0 20px 50px rgba(0,0,0,0.2)';
-              }}>
+                onMouseOver={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-20px) scale(1.04) rotate(-1deg)';
+                  e.currentTarget.style.boxShadow = '0 40px 80px rgba(102, 126, 234, 0.3)';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0) scale(1) rotate(0deg)';
+                  e.currentTarget.style.boxShadow = '0 20px 50px rgba(0,0,0,0.2)';
+                }}>
                 <img src={imgLimitless} alt="Vision 2" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }} />
               </div>
             </div>
